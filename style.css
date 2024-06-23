@@ -133,12 +133,12 @@ section {
 
 /* Custom Classes for Texts */
 .text-green {
-    color: #2ecc71 !important;
+    color: #060606 !important;
     font-weight: 100 !important;
 }
 
 .text-gray {
-    color: #b4b4b4 !important;
+    color: #100f0f !important;
 }
 
 .text-metal {
@@ -152,7 +152,7 @@ section {
 
 /* Custom Classes for Backgrounds */
 .bg-green {
-    background: #2ecc71 !important;
+    background: #bdbbbb !important;
 }
 
 .bg-shade {
@@ -208,6 +208,7 @@ section {
     margin-right: auto;
     filter: blur(0.3125rem);
     overflow-x: hidden;
+    
 }
 
 .hero-left {
@@ -244,6 +245,7 @@ section {
 /* Manage Section */
 .item-image img {
     width: 5rem !important;
+    height: 1rem !important;
 }
 
 .food-items p {
@@ -258,9 +260,27 @@ section {
 
 /* Footer Section */
 #footer {
-    background: url(images/footer-bg.png) no-repeat, #2ecc71;
+    position: relative;
+    background: #59615c; /* Fallback color if the image is not loaded */
+}
+
+#footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url(images/logo.png) repeat;
     background-position: center center;
     background-size: contain;
+    filter: blur(5px); /* Adjust the blur value as needed */
+    z-index: 0;
+}
+
+#footer > * {
+    position: relative;
+    z-index: 1;
 }
 
 .our-app-btn {
